@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodConnect - Create Account</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='usersignup.css')}}">
+    <script src="{{url_for('static',filename='script/add_user.js')}}"></script>
+</head>
+<body>
+
+    <main class="main-content">
+        <section class="registration-section">
+            <div class="registration-container">
+                <div class="registration-form-wrapper">
+                    <h1 class="registration-title">Create your Account</h1>
+                    <form class="registration-form">
+                        <div class="form-field">
+                            <input type="text" placeholder="Full Name" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="email" placeholder="Email" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="tel" placeholder="Phone Number" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="date" placeholder="D.O.B" class="input-field" required>
+                        </div>
+
+                        <div class="form-field-group">
+                            <label class="field-label">Gender :</label>
+                            <select class="select-field" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field-group">
+                            <label class="field-label">Blood Group:</label>
+                            <select class="select-field select-field-large" required>
+                                <option value="" disabled selected>Select</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <input type="text" placeholder="Address" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" placeholder="City" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" placeholder="State" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="text" placeholder="Pin" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="password" placeholder="Password" class="input-field" required>
+                        </div>
+                        <div class="form-field">
+                            <input type="password" placeholder="Confirm Password" class="input-field" required>
+                        </div>
+
+                        <div class="terms-checkbox">
+                            <input type="checkbox" id="terms" class="checkbox-input" required>
+                            <label for="terms" class="checkbox-label">Terms and Conditions</label>
+                        </div>
+
+                        <div class="form-links">
+                            <p class="register-org">
+                                <span class="highlight">Register</span>
+                                <span>as an Organisation</span>
+                            </p>
+                            <p class="login-link">
+                                <span>Already a User?</span>
+                                <a href="{{url_for('login')}}"><span class="highlight">Login</span></a>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="submit-button">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
+
+{% endblock content %}

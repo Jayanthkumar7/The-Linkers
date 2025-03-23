@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect Organization Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&family=Crimson+Text:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static',filename='organisationdashboard.css')}}">
+  <script src="{{url_for('static',filename='script/add_org_request.js')}}"></script>
+</head>
+<body>
+  <div class="page-container">
+    <section class="org-header">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5bdb1e99c23dfc9294c544a954b23fe52b3b2b1" alt="Header" class="header-bg">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9ee93a04f790c73eee4cd2b0a0a336985c02a343" alt="Organization Logo" class="org-logo">
+      <h1 class="org-name">HI {{current_user.name}} </h1>
+    </section>
+
+    <main class="main-content">
+      <div class="left-column">
+        <section class="info-card">
+          <div class="org-details">
+            <p>Reg Number:{{current_user.registration_number}}</p>
+            <p>Location ({{current_user.city}})</p>
+            <button class="edit-button">Edit</button>
+          </div>
+        </section>
+
+        <section class="info-card">
+          <div class="account-settings">
+            <p>Change Password</p>
+            <p>Enable/Disable Notifications</p>
+            <p>Delete Account Option (With Confirmation)</p>
+          </div>
+        </section>
+
+        <section class="info-card">
+          <div class="events-header">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/cdb6f2a03db71d2ce84f53b463a9e5292d31ec59" alt="Calendar" class="calendar-icon">
+            <h2 class="section-title">Upcoming Donation Drives</h2>
+          </div>
+          <p>Blood donation camps</p>
+          <div class="events-list">
+            <div class="event-item">Event 1</div>
+            <div class="event-item">Event 2</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="right-column">
+        <section class="info-card">
+          <h2 class="blood-stock-title">Blood Stock Management</h2>
+          
+          <div class="blood-groups">
+            
+            <div class="blood-group-row">
+              <h3 class="blood-type">O+</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-O+">
+                <label for="urgency-O+" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+            <div class="blood-group-row">
+              <h3 class="blood-type">B-</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-B-">
+                <label for="urgency-B-" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+            <div class="blood-group-row">
+              <h3 class="blood-type">O-</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-O-">
+                <label for="urgency-O-" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+            <div class="blood-group-row">
+              <h3 class="blood-type">A+</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-A+">
+                <label for="urgency-A+" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+            <div class="blood-group-row">
+              <h3 class="blood-type">AB+</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-AB+">
+                <label for="urgency-AB+" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+            <div class="blood-group-row">
+              <h3 class="blood-type">AB-</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-AB-">
+                <label for="urgency-AB-" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+            <div class="blood-group-row">
+              <h3 class="blood-type">B+</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-B+">
+                <label for="urgency-B+" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+            <div class="blood-group-row">
+              <h3 class="blood-type">A-</h3>
+              <div class="urgency-checkbox-container">
+                <input type="checkbox" class="urgency-checkbox" id="urgency-A-">
+                <label for="urgency-A-" class="urgency-label">Emergency</label>
+              </div>
+              <button class="request-button">Request</button>
+            </div>
+        
+          </div>
+        </section>
+        
+
+        <section class="info-card">
+          <div class="notification-header">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b22d86deb49dec6695f0908a08db20615b7f5d2" 
+                 alt="Notifications" class="notifications-icon">
+            <h2 class="notification-title">Notifications</h2>
+          </div>
+          <div class="notification-list">
+            {% if notifications %}
+              {% for notification in notifications %}
+                <p class="notification-item">
+                  <strong>{{ notification.name }}</strong> - {{ notification.status }}  
+                  <span class="notification-message">{{ notification.message }}</span>
+                </p>
+              {% endfor %}
+            {% else %}
+              <p class="notification-item">No new notifications.</p>
+            {% endif %}
+          </div>
+        </section>
+        
+        
+      </div>
+    </main>
+  </div>
+</body>
+</html>
+{% endblock content %}

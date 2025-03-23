@@ -1,0 +1,297 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  /* Emergency checkbox styling */
+.urgency-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.urgency-checkbox {
+  display: none; /* Hide default checkbox */
+}
+
+.urgency-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1d3557;
+}
+
+.urgency-label::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid #1d3557;
+  display: inline-block;
+  margin-right: 5px;
+  transition: background 0.3s ease-in-out;
+}
+
+.urgency-checkbox:checked + .urgency-label::before {
+  background-color: #d90429; /* Red color when checked (Emergency) */
+  border: 2px solid #d90429;
+}
+
+/* Notification Section Styling */
+.notification-list {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.notification-item {
+  background: #f8f9fa;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  border-left: 5px solid #ff4b5c;
+  transition: 0.3s ease-in-out;
+}
+
+.notification-item:hover {
+  background: #ffebec;
+  transform: scale(1.02);
+}
+
+.notification-message {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.notifications-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+  
+  .page-container {
+    margin-top: 50px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+  }
+  
+  /* Organization header styles */
+  .org-header {
+    position: relative;
+    width: 100%;
+    height: 228px;
+  }
+  
+  .header-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    object-fit: cover;
+  }
+  
+  .org-logo {
+    position: absolute;
+    left: 28px;
+    top: 13px;
+    width: 202px;
+    height: 202px;
+    border-radius: 16px;
+  }
+  
+  .org-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #1d3557;
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  /* Main content styles */
+  .main-content {
+    display: flex;
+    padding: 20px;
+    gap: 40px;
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1;
+  }
+  
+  .info-card {
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #d9d9d9;
+  }
+  
+  /* Organization details */
+  .org-details {
+    color: #1d3557;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+  .edit-button {
+    width: 40px;
+    height: 30px;
+    border: none;
+    border-radius: 16px;
+    color: #d9d9d9;
+    font-size: 16px;
+    text-align: center;
+    background-color: #1d3557;
+    cursor: pointer;
+  }
+  
+  /* Events section */
+  .events-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .calendar-icon {
+    width: 71px;
+    height: 71px;
+  }
+  
+  .section-title {
+    color: #1d3557;
+    font-size: 16px;
+    font-weight: 800;
+  }
+  
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .event-item {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #fff;
+  }
+  
+  /* Blood stock section */
+  .blood-stock-title {
+    color: #1d3557;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .blood-group-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .blood-type {
+    color: #1d3557;
+    font-size: 28px;
+    font-weight: 700;
+  }
+  
+  .request-button {
+    padding: 8px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    background-color: #1d3557;
+    cursor: pointer;
+  }
+  
+  /* Notifications section */
+  .notification-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .notifications-icon {
+    width: 86px;
+    height: 86px;
+  }
+  
+  .notification-title {
+    color: #1d3557;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  
+  .notification-list {
+    margin-top: 20px;
+  }
+  
+  .notification-item {
+    color: #000;
+    font-size: 12px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 991px) {
+    .main-content {
+      flex-direction: column;
+    }
+  
+    .left-column,
+    .right-column {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .org-name {
+      font-size: 24px;
+    }
+  
+    .info-card {
+      padding: 15px;
+    }
+  
+    .blood-group-row {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .request-button {
+      width: 100%;
+    }
+  }
+  

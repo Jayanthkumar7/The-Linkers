@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Registration - BloodConnect</title>
+    <link rel="stylesheet" href="DonorRegisteration.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Poppins:wght@400;600;700&family=Crimson+Text:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-container">
+
+
+      <main class="main-content">
+        <section class="registration-section">
+          <h1 class="registration-title">Donor Registration</h1>
+          <form class="registration-form">
+            <div class="form-group">
+              <label class="form-label" for="fullName">Full Name</label>
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="fullName"
+                  placeholder="Enter your name here"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="phoneNumber">Phone Number</label>
+              <div class="input-container">
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  placeholder="Enter your phone number"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <div class="input-container">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Enter your email id"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="weight">Weight</label>
+              <div class="input-container">
+                <input
+                  type="text"
+                  id="weight"
+                  placeholder="Enter your weight"
+                  class="form-input"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Last Blood Donation Date</label>
+              <div class="date-picker">
+                <i class="ti ti-calendar"></i>
+                <div>Choose date</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Health Questions</label>
+              <div class="checkbox-group">
+                <div class="checkbox-item">
+                  <input type="checkbox" id="q1" class="checkbox-input" />
+                  <label for="q1">question 1</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="q2" class="checkbox-input" />
+                  <label for="q2">question 2</label>
+                </div>
+                <div class="checkbox-item">
+                  <input type="checkbox" id="q3" class="checkbox-input" />
+                  <label for="q3">question 3</label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+          </form>
+        </section>
+      </main>
+
+
+    </div>
+  </body>
+</html>

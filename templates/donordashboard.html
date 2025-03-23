@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodConnect - Profile</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='donordashboard.css')}}">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-container">
+    <main class="main-content">
+      <div class="content-grid">
+        <section class="profile-card">
+          <div class="profile-header">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/5b54972fcaa1f0253e4c18c2956bf6045ed2edaf" alt="User" class="user-icon">
+
+            <h2 class="user-name">{{ current_user.full_name }}</h2>
+          </div>
+          <div class="profile-details">
+            <p class="blood-group"><strong>Blood Group:</strong> {{ current_user.blood_type }}</p>
+            <p class="eligibility-status"><strong>Eligibility Status:</strong> {{ 'Yes' if eligible == 'Yes' else 'No' }}</p>
+            {% if next_eligible_date %}
+              <p class="next-eligible"><strong>Next Eligible on:</strong> {{ next_eligible_date.strftime('%Y-%m-%d') }}</p>
+            {% endif %}
+          </div>
+        </section>
+
+        <section class="notifications-card">
+          <div class="section-header">
+            <h2 class="section-title">Blood Requests</h2>
+          </div>
+          <div class="notification-list">
+            {% if all_requests %}
+              {% for request in all_requests %}
+                <div class="notification-item">
+                  <p><strong>Requester:</strong> {{ request.requester_name if request.requester_name else request.bloodbank.name }}</p>
+                  <p><strong>Patient:</strong> {{ request.patient_name }} (Age: {{ request.patient_age }})</p>
+                  <p><strong>Blood Type Needed:</strong> {{ request.blood_type }}</p>
+                  <p><strong>Location:</strong> {{ request.hospital_name if request.hospital_name else request.bloodbank.city }}</p>
+                  <p><strong>Urgency:</strong> {{ request.urgency }}</p>
+                  <a href="{{ url_for('accept_donation_request', request_id=request.request_id) }}" class="accept-button">✔ Accept</a>
+                  <a href="{{ url_for('decline_donation_request', request_id=request.request_id) }}" class="decline-button">✖ Decline</a>
+                </div>
+              {% endfor %}
+            {% else %}
+              <p class="notification-item">No new blood requests at the moment.</p>
+            {% endif %}
+          </div>
+        </section>
+
+        <!-- Upcoming Donation Drives -->
+        <section class="donation-drives-card">
+          <div class="section-header">
+            <h2 class="section-title">Upcoming Donation Drives</h2>
+          </div>
+          <div class="event-list">
+            {% if upcoming_drives %}
+              {% for event in upcoming_drives %}
+                <p class="event-item"><strong>{{ event.event_name }}</strong> - {{ event.date }} at {{ event.location }}</p>
+              {% endfor %}
+            {% else %}
+              <p class="event-item">No upcoming drives available.</p>
+            {% endif %}
+          </div>
+        </section>
+
+        <!-- Past Donations -->
+        <section class="past-donations-card">
+          <div class="section-header">
+            <h2 class="section-title">Past Donations</h2>
+          </div>
+          <div class="donation-history">
+            {% if past_donations %}
+              <p class="donation-info"><strong>Total Donations Made:</strong> {{ past_donations|length }}</p>
+              <ul class="donation-list">
+                {% for donation in past_donations %}
+                  <li class="donation-item">Donated to {{ donation.recipient_name }} on {{ donation.date.strftime('%Y-%m-%d') }}</li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <p class="donation-info">No past donations recorded.</p>
+            {% endif %}
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Inbox -->
+      <aside class="inbox-container">
+        <h2 class="inbox-title">Inbox</h2>
+        <ul class="user-list">
+          {% if messages %}
+            {% for message in messages %}
+              <li class="user-item">{{ message.sender_name }}: {{ message.content }}</li>
+            {% endfor %}
+          {% else %}
+            <li class="user-item">No new messages</li>
+          {% endif %}
+        </ul>
+      </aside>
+
+
+    </main>
+  </div>
+</body>
+</html>
+
+{% endblock content %}

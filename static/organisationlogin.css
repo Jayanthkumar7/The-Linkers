@@ -1,0 +1,360 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  border-radius: 16px;
+  margin-top: 7px;
+  background-color: #d9d9d9;
+}
+
+.header-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1d3557;
+}
+
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.main-nav {
+  display: flex;
+  gap: 23px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d3557;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #2a4a7f;
+}
+
+.login-button {
+  border-radius: 12px;
+  color: #f8f9fa;
+  font-family: "Crimson Text", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  padding: 0 14px;
+  height: 42px;
+  background-color: #1d3557;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #2a4a7f;
+}
+
+/* Main content styles */
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 99px 0;
+}
+
+.login-container {
+  width: 600px;
+  border-radius: 16px;
+  padding: 20px 30px;
+  background-color: #d9d9d9;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-title {
+  font-family: "Crimson Text", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 63px;
+  color: #1d3557;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 16px;
+  padding: 0 20px;
+  font-family: "Crimson Text", sans-serif;
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.form-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.form-input:focus {
+  outline: none;
+  background-color: #eaeeff;
+}
+
+.form-actions {
+  margin: 20px 0;
+  text-align: right;
+}
+
+.forgot-password {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #000102;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #1d3557;
+}
+
+.register-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.register-link {
+  color: #1d3557;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #2a4a7f;
+}
+
+.submit-button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  border-radius: 16px;
+  color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #1d3557;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2a4a7f;
+}
+
+.footer {
+  padding: 48px 43px;
+  border-radius: 16px;
+  margin-top: 100px;
+  background-color: #1d3557;
+}
+
+.footer img{
+  width: 150px;
+  height: auto;
+}
+
+.footer-content {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  gap: 100px;
+}
+
+.footer-info {
+  max-width: 492px;
+}
+
+.footer-logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #f8f9fa;
+  margin-bottom: 8px;
+}
+
+.footer-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+.footer-links-container {
+  display: flex;
+  gap: 100px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-nav-title {
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-link {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .main-nav {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-content {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .login-button {
+    font-size: 20px;
+    height: 36px;
+  }
+
+  .login-container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .login-title {
+    font-family: "Crimson Text", sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .form-input {
+    height: 70px;
+    font-size: 24px;
+  }
+
+  .submit-button {
+    height: 70px;
+    font-size: 24px;
+  }
+
+  .footer {
+    padding: 30px 20px;
+  }
+
+  .footer-content {
+    gap: 30px;
+  }
+
+  .footer-logo {
+    font-size: 24px;
+  }
+
+  .footer-description {
+    font-size: 16px;
+  }
+
+  .footer-nav-title {
+    font-size: 24px;
+  }
+
+  .footer-link {
+    font-size: 16px;
+  }
+
+  .footer-links-container {
+    gap: 40px;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Maintain focus outline for keyboard users */
+:focus-visible {
+  outline: 3px solid #4a90e2;
+  outline-offset: 2px;
+}

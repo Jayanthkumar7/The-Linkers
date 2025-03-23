@@ -1,0 +1,355 @@
+  /* Reset and base styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .form-field-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .field-label {
+    color: #000;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .select-field {
+    width: 100%;
+    height: 40px;
+    border-radius: 16px;
+    background-color: #f8f9fa;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    padding: 0 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .select-field-large {
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* Header styles */
+  .header {
+    width: 100%;
+    height: 80px;
+    background-color: #d9d9d9;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+  }
+  
+  .logo{
+    color: #1d3557;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  
+  .header__logo img {
+    width: 150px; 
+    height: auto;  
+}
+  
+
+  .header__profile {
+    color: #f8f9fa;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    width: 144px;
+    height: 42px;
+    background-color: #1d3557;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .header__profile:hover {
+    background-color: #2a4a7f;
+  }
+  
+  /* Main content styles */
+  .main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+  }
+  
+  /* Search section styles */
+  .search-section {
+    flex: 1;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+  }
+  
+  .search-bar__select {
+    color: #1d3557;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    width: 122px;
+    height: 22px;
+    background-color: #d9d9d9;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
+  .search-bar__input {
+    flex: 1;
+    height: 22px;
+    background-color: #b4b4b4;
+    border-radius: 16px;
+  }
+  
+  .search-bar__button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Donor grid styles */
+  .donor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .donor-card {
+    background-color: #d9d9d9;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  
+  .donor-card__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .donor-card__image {
+    width: 99px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .donor-card__name {
+    color: #1d3557;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 0;
+  }
+  
+  .donor-card__info {
+    margin-bottom: 20px;
+  }
+  
+  .donor-card__detail {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  
+  .donor-card__detail:last-child {
+    margin-bottom: 0;
+  }
+  
+  .donor-card__action {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .connect-button {
+    width: 145px;
+    height: 34px;
+    background-color: #1d3557;
+    border-radius: 20px;
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .connect-button:hover {
+    background-color: #2a4a7f;
+  }
+  
+  /* Inbox styles */
+  .inbox {
+    width: 250px;
+    flex-shrink: 0;
+  }
+  
+  .inbox__container {
+    background-color: #b4b4b4;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .inbox__title {
+    color: #1d3557;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    background-color: #d9d9d9;
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .inbox__list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .inbox__item {
+    color: #000;
+    font-size: 33px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* Footer styles */
+  .footer {
+    background-color: #1d3557;
+    color: #fff;
+    padding: 40px;
+    margin-top: 40px;
+  }
+  
+  .footer__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer__section {
+    max-width: 425px;
+  }
+  
+  .footer__logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+  
+  .footer__description {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+  }
+  
+  .footer__title {
+    font-family: Inter, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+  
+  .footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .footer__link {
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .footer__link:hover {
+    opacity: 0.8;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 991px) {
+    .content-wrapper {
+      flex-direction: column;
+    }
+  
+    .inbox {
+      width: 100%;
+    }
+  
+    .footer__content {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .donor-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Accessibility focus styles */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+  

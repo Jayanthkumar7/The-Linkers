@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: auto;
+  background-color: #fff;
+  font-family: "Robu Choco Script", sans-serif;
+}
+
+.page-header {
+  width: auto ;
+  height: 50px;
+  display: flex;  
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background-color: #d9d9d9;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img{
+  width: auto;
+  height: 33px;
+}
+
+
+.profile-button {
+  color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  width: 85px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #1d3557;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-button:hover {
+  background-color: #2a4a7f;
+}
+
+.main-content {
+  width: auto ;
+  max-width: 1200px;
+  margin: 50px auto 0;
+  background-color: #d9d9d9;
+  border-radius: 18px;
+  padding: 50px 400px;
+}
+
+.page-title {
+  color: #1d3557;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.request-form {
+  max-width: 439px;
+  margin: 0 auto;
+}
+
+.section-title {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-input {
+  width: auto;
+  height: 41px;
+  border-radius: 16px;
+  background-color: #fff;
+  padding: 0 12px;
+  font-size: 20px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #1d3557;
+}
+
+.form-field-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.field-label {
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.select-field {
+  width: 100%;
+  height: 40px;
+  border-radius: 16px;
+  background-color: #f8f9fa;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  padding: 0 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.select-field-large {
+  font-size: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-right: 15px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+}
+
+.checkbox-label span {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.checkbox-label span:first-child {
+  font-size: 16px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.confirmation-section {
+  max-width: 513px;
+  margin: 30px auto 0;
+}
+.confirmation {
+  display: flex;
+  flex-direction: row;
+}
+
+.confirmation-text {
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.submit-button {
+  width: 450px;
+  height: 50px;
+  align-items: center;
+  background-color: #1d3557;
+  border-radius: 16px;
+  color: #d9d9d9;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 15px;
+  max-width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #2a4a7f;
+}
+
+.page-footer {
+  width: 100%;
+  background-color: #1d3557;
+  margin-top: 40px;
+  padding: 40px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-about {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 492px;
+}
+
+.footer-logo {
+  width: 140px;
+  height: 40px;
+}
+
+.footer-description {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.footer-links,
+.footer-support {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-title {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.footer-link {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-decoration:lch(from gray l c h);
+  transition: opacity 0.5s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+.patient-section {
+  margin-top: 30px;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .main-content,
+  .page-footer {
+    padding: 14px;
+  }
+
+  .section-title {
+    font-size: 14px;
+  }
+
+  .confirmation-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-content,
+  .page-footer {
+    padding: 16px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .form-input {
+    font-size: 16px;
+  }
+
+  .submit-button {
+    font-size: 20px;
+    height: 45px;
+  }
+
+  .footer-title {
+    font-size: 20px;
+  }
+
+  .footer-link {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{url_for('static',filename='baselogin.css')}}" />
+    <title>BloodConnect Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Crimson+Text:ital,wght@1,600&display=swap"
+      rel="stylesheet"/>
+    
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="header-background"></div>
+      <div class="logo-container">
+        <a href="{{url_for('home')}}"><img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/299928fbd90a216c10278887e04371daa5b70305"
+          alt="BloodConnect Logo"
+          class="logo"
+        />
+      </a>
+      </div>
+      <nav class="navigation">
+        {% if current_user.is_authenticated %} 
+        <a href="{{url_for('logout')}}"><button class="nav-button logout-button">Logout</button></a>
+        <button class="icon-button" aria-label="Profile">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f0a4d3ec6cf9b58c30e13a1fb2eb374b1f4c1ce"
+            alt="Profile"
+            class="profile-icon"
+          />
+        </button>
+
+        <button class="icon-button" aria-label="Notifications">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/f4f8b7eca76ea327d6b9f435ead1dc3b83814c7b"
+            alt="Notifications"
+            class="notification-icon"
+          />
+        </button>
+        {% else %}
+        <a href="{{url_for('login')}}"> <button class="nav-button login-button">Login / Sign up</button></a>
+        <a href="{{url_for('login_org')}}"> <button class="nav-button login-button">Login as ORG</button></a>
+        {% endif %}
+      </nav>
+    </header>
+
+    {% block content %}
+    {% endblock  %}
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/299928fbd90a216c10278887e04371daa5b70305"
+            alt="BloodConnect Logo"
+            class="footer-logo"
+          />
+          <p class="brand-description">
+            BloodConnect is a platform connecting donors and recipients to save
+            lives.
+          </p>
+        </div>
+
+        <nav class="footer-links" aria-label="Quick links">
+          <h2 class="footer-heading">Quick Links</h2>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">Home</a></li>
+            <li><a href="#" class="footer-link">About Us</a></li>
+            <li><a href="#" class="footer-link">Find Donors</a></li>
+            <li><a href="#" class="footer-link">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-support" aria-label="Support links">
+          <h2 class="footer-heading">Support</h2>
+          <ul class="footer-list">
+            <li><a href="#" class="footer-link">FAQ's</a></li>
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

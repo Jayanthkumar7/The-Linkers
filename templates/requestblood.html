@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Request Form - BloodLink</title>
+    <script src="{{url_for('static',filename='script/add_blood_request.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='requestblood.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="main-content">
+        <h1 class="page-title">Request Blood</h1>
+
+        <form class="request-form">
+            <section class="requester-section">
+                <h2 class="section-title">Requester Details</h2>
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" class="form-input" required>
+
+
+                  <div class="form-field-group">
+                    <label class="field-label">Relation to Patient:</label>
+                    <select class="select-field select-field-large rel-patient" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="self">Self</option>
+                        <option value="Family">Family</option>
+                        <option value="other">Other</option>
+
+                    </select>
+                </div>
+                </div>
+            </section>
+
+            <section class="patient-section">
+                <h2 class="section-title">Patient Details</h2>
+                <div class="input-group">
+                    <input type="text" placeholder="Patient's Name" class="form-input" required>
+                    <input type="number" placeholder="Patient's Age" class="form-input" required>
+                    <input type="text" placeholder="Hospital Name" class="form-input" required>
+
+                    <div class="form-field-group">
+                      <label class="field-label">Blood Group:</label>
+                      <select class="select-field select-field-large blood-group" required>
+                          <option value="" disabled selected>Select</option>
+                          <option value="A+">A+</option>
+                          <option value="A-">A-</option>
+                          <option value="B+">B+</option>
+                          <option value="B-">B-</option>
+                          <option value="AB+">AB+</option>
+                          <option value="AB-">AB-</option>
+                          <option value="O+">O+</option>
+                          <option value="O-">O-</option>
+                      </select>
+                  </div>
+
+                    <input type="text" placeholder="Reason for Blood Requirement" class="form-input" required>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <span>Emergency?</span>
+                            <input type="checkbox" class="checkbox">
+                        </label>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <section class="confirmation-section">
+              <div class="confirmation">
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                      <input type="checkbox" class="checkbox" required>
+                  </label>
+              </div>
+                <p class="confirmation-text">
+                    I confirm that the information provided is accurate and request urgent blood donation assistance.
+                </p>
+
+              </div>
+                <button type="submit" class="submit-button">Submit Blood Request</button>
+            </section>
+        </form>
+    </main>
+
+</body>
+</html>
+
+{% endblock %}    

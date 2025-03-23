@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Organization - BloodConnect</title>
+    <script src="{{url_for("static",filename='script/add_org_details.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='registerasorganisation.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@500&family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="registration-container">
+        <form class="registration-form">
+            <h1 class="form-title">Create your Account</h1>
+
+            <div class="form-fields">
+                <input type="text" placeholder="Institution Name" class="form-input" required>
+                <input type="text" placeholder="Registration Number" class="form-input" required>
+                <input type="email" placeholder="Email Address" class="form-input" required>
+                <input type="tel" placeholder="Phone Number" class="form-input" required>
+                <input type="text" placeholder="Location" class="form-input" required>
+                <input type="text" placeholder="Address" class="form-input" required>
+                <input type="text" placeholder="City" class="form-input" required>
+                <input type="text" placeholder="Pincode" class="form-input" required>
+
+                <div class="org-type-container">
+                    <label class="org-type-label">Type of Organization</label>
+                    <select class="org-type-select" required>
+                        <option value="">Select</option>
+                        <option value="hospital">Hospital</option>
+                        <option value="bloodbank">Blood Bank</option>
+                    </select>
+                </div>
+
+                <input type="password" placeholder="Set Password" class="form-input" required>
+                <input type="password" placeholder="Confirm Password" class="form-input" required>
+            </div>
+
+            <div class="terms-container">
+                <input type="checkbox" id="terms" class="terms-checkbox" required>
+                <label for="terms" class="terms-label">I agree to the Terms and Conditions</label>
+            </div>
+
+            <p class="login-text">Already have an account?</p>
+            <div class="login-link-container">
+                <a href="{{url_for('login_org')}}" class="login-link">Login</a>
+                <span class="login-suffix">as an Organization</span>
+            </div>
+
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </main>
+
+</body>
+</html>
+{% endblock content %}

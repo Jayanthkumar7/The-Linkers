@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodConnect - Save Lives Through Blood Donation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{url_for('static',filename='landingpage.css')}}" />
+  </head>
+  <body>
+
+    <main class="main-content">
+      <header class="hero-section">
+        <div class="hero-content">
+          <h2 class="hero-title">Save Lives Through Blood Donation</h2>
+          <p class="hero-description">
+            Connect with verified donors in your area and make a difference in
+            someone's life today.
+          </p>
+
+        {% if type_of_user == 'bloodbank' %}
+
+
+        <div class="hero-buttons">
+          <a href="{{url_for('organisation_dashboard')}}"><button class="cta-button">Dashboard</button></a>
+        </div>
+      </div>
+
+
+          
+        {% else %}
+
+        <div class="hero-buttons">
+          <a href="{{url_for('find_donor')}}"><button class="cta-button">Find a Donor</button></a>
+          <a href="{{url_for('receiver_dashboard')}}"><button class="cta-button">Request Dashboard</button></a>
+
+          {% if not my_self_requests %}
+          <a href="{{url_for('donor_dashboard')}}"><button class="cta-button">Donor Dashboard</button></a>
+          {% endif %}
+        </div>
+      </div>
+
+
+
+
+
+
+      {% endif %}
+
+
+      <div class="hero-image" role="img" aria-label="Blood donation illustration">
+        <img class='image_don' src="{{url_for('static',filename='donation.jpeg')}}" alt="">
+      </div>
+      </header>
+
+      <section class="features-section">
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-content">
+              <h3 class="feature-title">Verified Donors</h3>
+              <p class="feature-description">
+                All donors are authenticated through hospitals.
+              </p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="feature-content">
+              <h3 class="feature-title">Real-Time Chat</h3>
+              <p class="feature-description">
+                Secure chat with donors for quick coordination.
+              </p>
+            </div>
+          </article>
+          <article class="feature-card">
+            <div class="feature-content">
+              <h3 class="feature-title">Location-Based Search</h3>
+              <p class="feature-description">
+                Find donors near you in real-time.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="process-section">
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-content">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/42d7382de42fd1868678a14f1b2250926a5c9537"
+                alt="Register icon"
+                class="process-icon"
+              />
+              <div class="process-text">
+                <h3 class="process-title">Register</h3>
+                <p class="process-description">
+                  Sign up as a donor or recipient.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="process-card">
+            <div class="process-content">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/a5fc19064ec5c8fd893e3af9462a66d6f197f787"
+                alt="Verify icon"
+                class="process-icon"
+              />
+              <div class="process-text">
+                <h3 class="process-title">Verify Blood Type</h3>
+                <p class="process-description">
+                  Hospitals confirm donor eligibility.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="process-card">
+            <div class="process-content">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/245062ece2ac36373950e8e4b06f59cd6d2edf2c"
+                alt="Match icon"
+                class="process-icon"
+              />
+              <div class="process-text">
+                <h3 class="process-title">Find a Match</h3>
+                <p class="process-description">
+                  Search for nearby donors in real time.
+                </p>
+              </div>
+            </div>
+          </article>
+          <article class="process-card">
+            <div class="process-content">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/e75d037f79bfc8919cf23de43c008647a87326c1"
+                alt="Donate icon"
+                class="process-icon"
+              />
+              <div class="process-text">
+                <h3 class="process-title">Donate & Save Lives</h3>
+                <p class="process-description">
+                  Chat with donors and arrange donation.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    
+  </body>
+</html>
+
+{% endblock %}

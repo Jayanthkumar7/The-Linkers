@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodConnect - Login</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='userlogin.css')}}" />
+    <script src="{{url_for('static',filename='script/verify_user.js')}}"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Inter:wght@500&family=Crimson+Text:ital,wght@1,600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page-wrapper">
+
+
+      <main class="main-content">
+        <section class="login-section">
+          <h1 class="login-title">Login to your account</h1>
+          <form class="login-form">
+            <div class="form-fields">
+              <input
+                type="text"
+                placeholder="Email / Phone"
+                class="form-input"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                class="form-input"
+              />
+            </div>
+            <div class="form-links">
+              <div class="signup-text">
+                <span>Don't have an account?</span>
+                <a href="{{url_for('signup_user')}}" class="signup-link">Sign Up</a>
+              </div>
+              <div class="org-login">Login as an organisation</div>
+              <a href="#" class="forgot-password">Forget Password?</a>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </section>
+      </main>
+
+     
+    </div>
+  </body>
+</html>
+{% endblock content %}

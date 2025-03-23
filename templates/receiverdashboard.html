@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BloodConnect</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='receiverdashboard.css')}}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="{{url_for('static',filename='script/receiverdashboard.js')}}"></script>
+  </head>
+  <body>
+
+
+    <main class="main-content">
+      <div class="content-wrapper">
+        <section class="search-section">
+          <div class="search-bar">
+            <div class="form-field-group">
+              <label class="field-label">Blood Group:</label>
+              <select class="select-field select-field-large blood-group" id="bloodGroupFilter" onchange="filterRequests()">
+                <option value="" selected>All Blood Groups</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            
+            </div>
+            <button class="search-bar__button" aria-label="Search">
+              <svg width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.2188 16.5787C5.46539 16.5787 1.59814 13.1755 1.59814 8.99246C1.59814 4.80942 5.46539 1.40625 10.2188 1.40625C14.9723 1.40625 18.8395 4.80942 18.8395 8.99246C18.8395 13.1755 14.9723 16.5787 10.2188 16.5787ZM10.2188 2.92349C6.41625 2.92349 3.32228 5.64618 3.32228 8.99246C3.32228 12.3387 6.41625 15.0614 10.2188 15.0614C14.0214 15.0614 17.1154 12.3387 17.1154 8.99246C17.1154 5.64618 14.0223 2.92349 10.2188 2.92349Z" fill="#1D3557"/>
+                <path d="M22.5396 20.5937C22.4264 20.5938 22.3143 20.5742 22.2097 20.5361C22.1051 20.4979 22.0101 20.442 21.9301 20.3714L15.2974 14.5346C15.2173 14.4642 15.1538 14.3805 15.1105 14.2885C15.0672 14.1965 15.0449 14.0979 15.0449 13.9983C15.0449 13.8986 15.0672 13.8 15.1105 13.708C15.1538 13.616 15.2173 13.5323 15.2974 13.4619C15.3774 13.3915 15.4724 13.3356 15.577 13.2975C15.6816 13.2594 15.7937 13.2397 15.9069 13.2397C16.0201 13.2397 16.1321 13.2594 16.2367 13.2975C16.3413 13.3356 16.4363 13.3915 16.5163 13.4619L23.1491 19.2987C23.2701 19.4047 23.3525 19.5399 23.386 19.6871C23.4195 19.8344 23.4025 19.9871 23.3372 20.1258C23.2719 20.2646 23.1612 20.3831 23.0192 20.4664C22.8772 20.5497 22.7103 20.594 22.5396 20.5937Z" fill="#1D3557"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="donor-grid">
+            {% for request in user_blood_bank_requests %}
+            <article class="donor-card">
+              <div class="donor-card__header">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bfe8078ac67fbae4bdcb2dbfb6a34aee5595782"
+                  alt="User"
+                  class="donor-card__image"
+                />
+                <h2 class="donor-card__name">blood bank {{ request.blood_bank_id }}</h2>
+              </div> 
+              <div class="donor-card__info">
+                <p class="donor-card__detail">Location: {{ request.city if request.city else "Unknown" }}</p>
+                <p class="donor-card__detail">Blood Group: {{ request.requested_blood_type }}</p>
+                <p class="donor-card__detail">Urgency: {{ request.urgency }}</p>
+                <p class="donor-card__detail">Status: {{ request.status }}</p>
+              </div>
+              <div class="donor-card__action">
+                <button class="connect-button" 
+        data-request-id="{{ request.request_id }}" 
+        data-blood-bank-id="{{ request.blood_bank_id if request.blood_bank_id else '' }}" 
+        onclick="connectRequest(this)">Connect</button>
+
+              </div>
+            </article>
+            {% endfor %}
+
+            {% for request in user_blood_requests %}
+            <article class="donor-card">
+              <div class="donor-card__header">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/7bfe8078ac67fbae4bdcb2dbfb6a34aee5595782"
+                  alt="User"
+                  class="donor-card__image"
+                />
+                <h2 class="donor-card__name">{{ request.requester_name}}</h2>
+              </div> 
+              <div class="donor-card__info">
+                <p class="donor-card__detail">Patient Name: {{ request.patient_name }}</p>
+                <p class="donor-card__detail">Blood Group: {{ request.blood_type}}</p>
+                <p class="donor-card__detail">Urgency: {{ request.urgency }}</p>
+
+                <p class="donor-card__detail">Status: {{ request.status }}</p>
+              </div>
+              <div class="donor-card__action">
+                <button class="connect-button" 
+        data-request-id="{{ request.request_id }}" 
+        data-blood-bank-id="{{ request.blood_bank_id if request.blood_bank_id else '' }}" 
+        onclick="connectRequest(this)">Connect</button>
+
+              </div>
+            </article>
+            {% endfor %}
+
+
+          </div>
+        </section>
+
+        <aside class="inbox">
+          <div class="inbox__container">
+            <h2 class="inbox__title">Inbox</h2>
+            <div class="inbox__list">
+              <div class="inbox__item">User 1</div>
+              <div class="inbox__item">User 2</div>
+              <div class="inbox__item">User 3</div>
+              <div class="inbox__item">User 4</div>
+              <div class="inbox__item">User 5</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
+
+
+{% endblock content %}
