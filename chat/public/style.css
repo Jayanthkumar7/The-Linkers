@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Inbox Card (matches the dashboard's card style) */
+.card {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Matches the width of the Inbox section in the image */
+  height: 500px; /* Matches the height of the Inbox section in the image */
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  color: #d32f2f; /* Red heading to match the dashboard */
+  margin-top: 0;
+  font-size: 18px;
+}
+
+/* User Login Section */
+.user-section {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.user-section input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 5px;
+  width: 150px;
+}
+
+.user-section button {
+  padding: 8px 16px;
+  background-color: #1a3c5e; /* Blue button to match the logout button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Chat Container */
+.chat-container {
+  flex: 1;
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.users-list {
+  width: 30%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+
+.users-list button {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #ddd;
+}
+
+.users-list button.active {
+  background-color: #1a3c5e;
+  color: white;
+}
+
+.chat-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+#end-chat-btn {
+  padding: 8px 16px;
+  background-color: #d32f2f; /* Red to match the dashboard theme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+li {
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+li.received {
+  background-color: #e0e0e0;
+  text-align: left;
+}
+
+li.sent {
+  background-color: #d1f0d1;
+  text-align: right;
+}
+
+form {
+  display: flex;
+  margin-top: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px;
+  background-color: #1a3c5e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

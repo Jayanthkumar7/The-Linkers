@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat in Inbox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Inbox Section (Chat Window) -->
+  <div class="card inbox">
+    <h2>Inbox</h2>
+    <div id="user-section" class="user-section">
+      <input id="sender_id" type="text" placeholder="Enter your User ID">
+      <button id="connect-btn">Connect</button>
+    </div>
+    <div id="chat-section" class="chat-container" style="display: none;">
+      <div id="users-list" class="users-list"></div>
+      <div id="chat-window" class="chat-window">
+        <div class="chat-header">
+          <button id="end-chat-btn">End Chat</button>
+        </div>
+        <ul id="messages" class="messages"></ul>
+        <form id="form">
+          <input id="input" autocomplete="off" placeholder="Type your message...">
+          <button>Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
